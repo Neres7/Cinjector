@@ -36,5 +36,5 @@ elif [[ $1 == "-e" ]];then
 	curl "127.0.0.1:9090/resolve.php?host=fiap.com.br;env"
 else
 	echo "If you need help type -h or --help"
-	echo "Usage ./resolve.sh -h"
+	echo "Usage ./cinjector.sh -h"
 fi
