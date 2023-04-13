@@ -37,5 +37,5 @@ elif [[ $1 == "-e" ]];then
         curl "$URL;env"
 else
         echo "If you need help type -h or --help"
-        echo "Usage ./resolve.sh -h"
+        echo "Usage ./cinjector.sh -h"
 fi
